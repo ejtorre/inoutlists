@@ -20,7 +20,16 @@ maintainers = [
 ]
 readme = "README.md"
 license = {file = "LICENSE"}
-keywords = ["sanctions", "record linkage", "deduplication", "entity resolution", "OFAC", "lists", "map", "normalization"]
+keywords = [
+    "sanctions", 
+    "record linkage", 
+    "deduplication", 
+    "entity resolution", 
+    "OFAC", 
+    "lists", 
+    "map", 
+    "normalization"
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "License :: OSI Approved :: MIT License",
