@@ -1,0 +1,71 @@
+# Enviroment variables
+.env
+
+# VS Code
+.vscode/
+
+# Virtual enviroments
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod] 
+*$py.class
+
+# pyenv 
+.python-version
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+.pytest_cache/*
+coverage.xml
+*,cover
+
+# Django stuff:
+*.log
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.bat
+
+# PyBuilder
+target/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Sphinx documentation
+docs/_build/
+
+# C extensions and Cython .pyx compilations
+*.so
+algorithms/*.c
+
+# Translations
+*.mo
+*.pot
