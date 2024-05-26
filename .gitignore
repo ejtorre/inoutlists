@@ -12,10 +12,6 @@ tests/.data/
 .venv/
 venv/
 
-# Git Hub
-
-.github/
-
 # Python
 __pycache__/
 *.py[cod] 
