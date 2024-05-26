@@ -22,13 +22,13 @@ class Dumper():
 class DumperJSON(Dumper):
 
     def dump(self, data):
-        file = self.kwargs.get("file", None)
-        if file is None:
+        output = self.kwargs.get("output", None)
+        if output is None:
             return json.dumps(data, **self.kwargs)
         else:
-            kwargs = {k:v for k,v in self.kwargs.items() if k != "file"}
+            kwargs = {k:v for k,v in self.kwargs.items() if k != "output"}
             try:
-                with open(file, mode="w", encoding="utf-8") as fileOut:
+                with open(output, mode="w", encoding="utf-8") as fileOut:
                     json.dump(data, fileOut, **kwargs)
                 return True
             except OSError as err:

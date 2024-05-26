@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "inoutlists"
-version = "0.0.2"
+version = "1.0.0"
 requires-python = ">=3.8"
 dependencies = [
   "pandas>=2.2.2",
   "lxml>=5.2.2",
   "requests>=2.32.2"
 ]
-description = "A package to map different sources of lists, for example OFAC, to a common interface and dump the mapped data to several formats (JSON, CSV, etc)."
+description = "inoutlists is a python package to parse and normalize different sources of lists (OFAC, EU, UN, etc) to a common dictionary interface."
 authors = [
     {name = "Eusebio José de la Torre Niño", email = "ej.torre.nino@gmail.com"}
 ]
@@ -21,17 +21,22 @@ maintainers = [
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = [
-    "sanctions", 
+    "mapping",
+    "parsing",
+    "decoding",
+    "encoding",
+    "normalization",
     "record linkage", 
     "deduplication", 
     "entity resolution", 
-    "OFAC", 
-    "lists", 
-    "map", 
-    "normalization"
+    "OFAC",
+    "EU",
+    "UN",
+    "lists"
+    "sanctions"
 ]
-classifiers = [    
-    "Development Status :: 4 - Beta",
+classifiers = [ 
+    "Development Status :: 5 - Production/Stable",    
     "License :: OSI Approved :: MIT License",
     "Environment :: Console",
     "Intended Audience :: Developers",
@@ -41,4 +46,7 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://github.com/ejtorre/inoutlists"
+Homepage = "https://github.com/ejtorre/inoutlists"
+Documentation = "https://github.com/ejtorre/inoutlists"
+Repository = "https://github.com/ejtorre/inoutlists"
+Source = "https://github.com/ejtorre/inoutlists"

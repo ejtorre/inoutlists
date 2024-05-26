@@ -70,7 +70,7 @@ for description, sourceInfo in filesInfo.items():
         dump(
             list, 
             DumperJSON, 
-            file=fileJSON, 
+            output=fileJSON, 
             indent=2, 
             ensure_ascii=False
         )
