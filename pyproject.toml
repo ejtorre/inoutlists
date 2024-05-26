@@ -32,7 +32,7 @@ keywords = [
     "OFAC",
     "EU",
     "UN",
-    "lists"
+    "lists",
     "sanctions"
 ]
 classifiers = [ 
