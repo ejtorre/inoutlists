@@ -1,7 +1,3 @@
-# Test data
-
-tests/.data/
-
 # Enviroment variables
 .env
 

@@ -42,7 +42,7 @@ class DumperPandas(Dumper):
 
     def dump(self, data):        
 
-        metaFields = [            
+        metaFields = [
             "id",
             "type"
         ]
