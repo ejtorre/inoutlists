@@ -18,10 +18,12 @@ _modulePath = Path(os.path.dirname(__file__))
 
 class Loader():
 
-    def __init__(self, description):        
+    def __init__(self, *args, **kwargs):        
         self.meta = {
-            "description": description
-        }        
+            "description": kwargs.get("description", "")
+        }
+        self.args = args
+        self.kwargs = kwargs
         self.countryNames = {}
         with open(Path(_modulePath, "country_names.csv"), 
                   mode="r", 
@@ -129,6 +131,13 @@ class Loader():
 
 class LoaderXML(Loader):
 
+    def __init__(self, 
+                 description="", 
+                 schema=Path(_modulePath, "OFAC_xml.xsd")
+        ):
+        super().__init__(description=description, schema=schema)
+        self.schema = schema
+
     def load(self, data_source):        
         try:
             if isinstance(data_source, str):
@@ -151,14 +160,31 @@ class LoaderXML(Loader):
             else:
                 raise Exception("Data source not allowed")
         except Exception as err:
-            print(f"{err=}, {type(err)=}")
+            print(f"{err=}, {type(err)=}")        
+
+        if self.schema is None:
+            raise Exception("The loader class must provide a path to a schema")
+        
+        if not isinstance(self.schema, Path):
+            raise Exception("The schema must be a Path object")
+
+        if not self.schemaValidation(self.schema):
+            raise Exception(f"Data invalid. Schema: {str(self.schema)}")
             
         self.ns = self.data.nsmap
 
+    def schemaValidation(self, xsd):
+        xmlschema_doc = ET.parse(xsd)
+        xmlschema = ET.XMLSchema(xmlschema_doc)
+        return xmlschema.validate(self.data)
+
 class LoaderOFACXML(LoaderXML):
 
-    def __init__(self, description):
-        super().__init__(description)        
+    def __init__(self, 
+                 description="", 
+                 schema=Path(_modulePath, "OFAC_xml.xsd")
+        ):
+        super().__init__(description=description, schema=schema)
         self.allowedIdTypes = []
         with open(Path(_modulePath, "./OFAC_id_Types.csv"), 
                   mode="r", 
@@ -465,6 +491,12 @@ class LoaderOFACXML(LoaderXML):
 
 class LoaderEUXML(LoaderXML):
 
+    def __init__(self, 
+                 description="", 
+                 schema=Path(_modulePath, "EU_20171012-FULL-schema-1_1(xsd).xsd")
+        ):
+        super().__init__(description=description, schema=schema)
+
     def load(self, data_source):
         super().load(data_source)
         self.meta["list_date"] = self.lxmlGetAttribValue(self.data, "generationDate")        
@@ -717,6 +749,12 @@ class LoaderEUXML(LoaderXML):
         return result
     
 class LoaderUNXML(LoaderXML):
+
+    def __init__(self, 
+                 description="", 
+                 schema=Path(_modulePath, "UN_consolidated.xsd")
+        ):
+        super().__init__(description=description, schema=schema)
     
     def load(self, data_source):
         super().load(data_source)
@@ -1047,5 +1085,5 @@ class LoaderUNXML(LoaderXML):
         
         return result
     
-def load(data, loader=Loader, description=""):
-    return loader(description).load(data)
+def load(data, loader=Loader, *args, **kwargs):
+    return loader(*args, **kwargs).load(data)

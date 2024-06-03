@@ -2,9 +2,16 @@ import unittest
 import lxml.etree as ET
 import requests
 import json
-from .settings import TestFixtures
 from inoutlists import dump, DumperJSON, DumperPandas
 from pandas import DataFrame as pdDF
+try:
+    from .settings import TestFixtures
+except:
+    from settings import TestFixtures
+import inoutlists
+from pathlib import Path
+import os
+
 
 class TestInOut(TestFixtures):
 
@@ -57,6 +64,17 @@ class TestInOut(TestFixtures):
             return listEntriesI + listEntriesO
         else:
             return []
+    
+    def test_schema_validation_error(self):
+        inoutlistsPath =  Path(os.path.dirname(inoutlists.__file__))        
+        self.assertRaises(
+            Exception,
+            inoutlists.load,
+            self.FIXTURES_INFO["OFACSDN"]["input"]["localPath"],
+            loader=inoutlists.LoaderOFACXML,
+            description="Test invalid schema",                
+            schema = Path(inoutlistsPath, "EU_20171012-FULL-schema-1_1(xsd).xsd")
+        )
 
     def test_dumper_JSON_num_list_entries(self):
         for source in self.FIXTURES_INFO.keys():

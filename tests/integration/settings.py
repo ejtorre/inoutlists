@@ -15,7 +15,7 @@ class TestFixtures(unittest.TestCase):
             "OFACSDN": {
                 "input": {
                     "localPath": Path(cls.FIXTURES_PATH, "sdn.xml"),
-                    "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML",            
+                    "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML",
                     "loader": LoaderOFACXML
                 },
                 "output": {

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "inoutlists"
-version = "1.0.0"
+version = "1.0.1"
 requires-python = ">=3.8"
 dependencies = [
   "pandas>=2.2.2",
@@ -26,9 +26,9 @@ keywords = [
     "decoding",
     "encoding",
     "normalization",
-    "record linkage", 
+    "record-linkage", 
     "deduplication", 
-    "entity resolution", 
+    "entity-resolution", 
     "OFAC",
     "EU",
     "UN",
@@ -47,6 +47,6 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/ejtorre/inoutlists"
-Documentation = "https://github.com/ejtorre/inoutlists"
+Documentation = "https://ejtorre.github.io/inoutlists/"
 Repository = "https://github.com/ejtorre/inoutlists"
 Source = "https://github.com/ejtorre/inoutlists"

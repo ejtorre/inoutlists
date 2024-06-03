@@ -14,7 +14,7 @@ class Dumper():
 
     def __init__(self, *args, **kwargs):
         self.args = args
-        self.kwargs = kwargs        
+        self.kwargs = kwargs
 
     def dump(self, data):
         pass
