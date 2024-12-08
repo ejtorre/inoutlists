@@ -100,6 +100,25 @@ Name: 32, dtype: object
 $ python -m pip install inoutlists
 ```
 
+## Common dictionary interface
+
+The common dictionary interface consists of a meta key and a lists of list entries. The last one consists in a list of the records of the source. For each record, the next fields are available:
+- id. The id of the record. The current loaders takes the original id of the source. Mandatory.</li>
+- type. Mandatory. The possible values are:
+    - O: Organization (company, political party, terrorism group, etc).
+    - I: Individuals.
+    - V: Vessels.
+    - A: Aircraft.
+    - U: Unknown.
+- names. List of list entry names. Mandatory.
+- addresses. List of list entry addresses. Optional.
+- nationalities. List of list entry nationalities. Optional.
+- dates_of_birth. List of list entry dates of birth. Optional.
+- places_of_birth. List of list entry places of birth. Optional.
+- identifications. List of list entry identifications (passport, national id, etc). Optional.
+- programs. List of list entry regulations (Taliban, Executive order 14024, etc.). Optional.
+- additionalInformation. Dictionary of list entry additional information. Optional.
+
 ## Current loaders distributed with inoutlists
 
 - Loader. Generic loader class. All the loader classes must inherit and implement the methods defined in this class.
