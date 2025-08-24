@@ -37,7 +37,7 @@ class TestFixtures(unittest.TestCase):
             "EU": {
                 "input": {            
                     "localPath": Path(cls.FIXTURES_PATH, "20240513-FULL-1_1(xsd).xml"),
-                    "url": "https://webgate.ec.europa.eu/fsd/fsf/public/files/xmlFullSanctionsList_1_1/content?token=dG9rZW4tMjAxNw",                    
+                    "url": "https://webgate.ec.europa.eu/fsd/fsf/public/files/xmlFullSanctionsList_1_1/content?token=dG9rZW4tMjAxNw",
                     "loader": LoaderEUXML
                 },
                 "output": {

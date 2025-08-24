@@ -4,6 +4,10 @@
 # VS Code
 .vscode/
 
+# Temporary files
+.tmp/
+.temp/
+
 # Virtual enviroments
 .venv/
 venv/

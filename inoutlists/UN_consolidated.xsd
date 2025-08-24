@@ -1,132 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="CONSOLIDATED_LIST">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="INDIVIDUALS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="INDIVIDUAL">
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="INDIVIDUAL">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="DATAID" type="xs:unsignedInt" />
-                    <xs:element name="VERSIONNUM" type="xs:unsignedByte" />
-                    <xs:element name="FIRST_NAME" type="xs:string" />
-                    <xs:element minOccurs="0" name="SECOND_NAME" type="xs:string" />
-                    <xs:element minOccurs="0" name="THIRD_NAME" type="xs:string" />
-                    <xs:element minOccurs="0" name="FOURTH_NAME" type="xs:string" />
-                    <xs:element name="UN_LIST_TYPE" type="xs:string" />
-                    <xs:element name="REFERENCE_NUMBER" type="xs:string" />
-                    <xs:element name="LISTED_ON" type="xs:date" />
-                    <xs:element minOccurs="0" name="GENDER" type="xs:string" />
-                    <xs:element minOccurs="0" name="NAME_ORIGINAL_SCRIPT" type="xs:string" />
-                    <xs:element name="COMMENTS1" type="xs:string" />
-                    <xs:element minOccurs="0" name="TITLE">
+                    <xs:element minOccurs="0" maxOccurs="1" name="DATAID" type="xs:positiveInteger" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="VERSIONNUM" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="FIRST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="SECOND_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="THIRD_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="FOURTH_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="UN_LIST_TYPE" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="REFERENCE_NUMBER" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="LISTED_ON" type="xs:date" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="GENDER" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="NAME_ORIGINAL_SCRIPT" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="COMMENTS1" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="TITLE">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element maxOccurs="unbounded" name="VALUE" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element minOccurs="0" name="DESIGNATION">
+                    <xs:element minOccurs="0" maxOccurs="1" name="DESIGNATION">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element maxOccurs="unbounded" name="VALUE" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element minOccurs="0" name="NATIONALITY">
+                    <xs:element minOccurs="0" maxOccurs="1" name="NATIONALITY">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element maxOccurs="unbounded" name="VALUE" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="LIST_TYPE">
+                    <xs:element minOccurs="0" maxOccurs="1" name="LIST_TYPE">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="VALUE" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="LAST_DAY_UPDATED">
+                    <xs:element minOccurs="0" maxOccurs="1" name="LAST_DAY_UPDATED">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element maxOccurs="unbounded" name="VALUE" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="INDIVIDUAL_ALIAS">
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="INDIVIDUAL_ALIAS">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:choice maxOccurs="unbounded">
-                            <xs:element name="QUALITY" type="xs:string" />
-                            <xs:element name="ALIAS_NAME" type="xs:string" />
-                            <xs:element name="CITY_OF_BIRTH" type="xs:string" />
-                            <xs:element name="COUNTRY_OF_BIRTH" type="xs:string" />
-                            <xs:element name="NOTE" type="xs:string" />
-                            <xs:element name="DATE_OF_BIRTH" type="xs:string" />
-                          </xs:choice>
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="QUALITY" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="ALIAS_NAME" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="DATE_OF_BIRTH" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="CITY_OF_BIRTH" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="COUNTRY_OF_BIRTH" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" nillable="true" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="INDIVIDUAL_ADDRESS">
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="INDIVIDUAL_ADDRESS">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:choice maxOccurs="unbounded">
-                            <xs:element name="NOTE" type="xs:string" />
-                            <xs:element name="STREET" type="xs:string" />
-                            <xs:element name="STATE_PROVINCE" type="xs:string" />
-                            <xs:element name="CITY" type="xs:string" />
-                            <xs:element name="COUNTRY" type="xs:string" />
-                            <xs:element name="ZIP_CODE" type="xs:unsignedShort" />
-                          </xs:choice>
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="STREET" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="STATE_PROVINCE" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="CITY" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="COUNTRY" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="ZIP_CODE" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
                     <xs:element minOccurs="0" maxOccurs="unbounded" name="INDIVIDUAL_DATE_OF_BIRTH">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:choice maxOccurs="unbounded">
-                            <xs:element name="TYPE_OF_DATE" type="xs:string" />
-                            <xs:element name="DATE" type="xs:date" />
-                            <xs:element name="FROM_YEAR" type="xs:unsignedShort" />
-                            <xs:element name="TO_YEAR" type="xs:unsignedShort" />
-                            <xs:element name="NOTE" type="xs:string" />
-                            <xs:element name="YEAR" type="xs:unsignedShort" />
-                          </xs:choice>
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="TYPE_OF_DATE" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="DATE" type="xs:date" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="FROM_YEAR" type="xs:positiveInteger" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="TO_YEAR" type="xs:positiveInteger" nillable="true" />                          
+                          <xs:element minOccurs="0" maxOccurs="1" name="YEAR" type="xs:positiveInteger" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" nillable="true" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="INDIVIDUAL_PLACE_OF_BIRTH">
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="INDIVIDUAL_PLACE_OF_BIRTH">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element minOccurs="0" name="STREET" type="xs:string" />
-                          <xs:element minOccurs="0" name="CITY" type="xs:string" />
-                          <xs:element minOccurs="0" name="STATE_PROVINCE" type="xs:string" />
-                          <xs:element minOccurs="0" name="NOTE" type="xs:string" />
-                          <xs:element minOccurs="0" name="COUNTRY" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="STREET" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="CITY" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="STATE_PROVINCE" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="COUNTRY" type="xs:string" nillable="true" />
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" nillable="true" />
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="INDIVIDUAL_DOCUMENT">
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="INDIVIDUAL_DOCUMENT">
                       <xs:complexType>
-                        <xs:sequence minOccurs="0">
-                          <xs:choice maxOccurs="unbounded">
-                            <xs:element name="TYPE_OF_DOCUMENT" type="xs:string" />
-                            <xs:element name="TYPE_OF_DOCUMENT2" type="xs:string" />
-                            <xs:element name="NOTE" type="xs:string" />
-                            <xs:element name="NUMBER" type="xs:string" />
-                            <xs:element name="ISSUING_COUNTRY" type="xs:string" />
-                            <xs:element name="DATE_OF_ISSUE" type="xs:date" />
-                            <xs:element name="CITY_OF_ISSUE" type="xs:string" />
-                            <xs:element name="COUNTRY_OF_ISSUE" type="xs:string" />
-                          </xs:choice>
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="TYPE_OF_DOCUMENT" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="TYPE_OF_DOCUMENT2" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="NUMBER" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="ISSUING_COUNTRY" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="DATE_OF_ISSUE" type="xs:date" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="CITY_OF_ISSUE" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="COUNTRY_OF_ISSUE" type="xs:string" nillable="true"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="SORT_KEY" />
-                    <xs:element name="SORT_KEY_LAST_MOD" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="SORT_KEY" type="xs:string" nillable="true"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="SORT_KEY_LAST_MOD" type="xs:string" nillable="true"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -136,54 +128,54 @@
         <xs:element name="ENTITIES">
           <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="ENTITY">
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="ENTITY">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="DATAID" type="xs:unsignedInt" />
-                    <xs:element name="VERSIONNUM" type="xs:unsignedByte" />
-                    <xs:element name="FIRST_NAME" type="xs:string" />
-                    <xs:element name="UN_LIST_TYPE" type="xs:string" />
-                    <xs:element name="REFERENCE_NUMBER" type="xs:string" />
-                    <xs:element name="LISTED_ON" type="xs:date" />
-                    <xs:element minOccurs="0" name="NAME_ORIGINAL_SCRIPT" type="xs:string" />
-                    <xs:element name="COMMENTS1" type="xs:string" />
-                    <xs:element name="LIST_TYPE">
+                    <xs:element minOccurs="0" maxOccurs="1" name="DATAID" type="xs:positiveInteger" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="VERSIONNUM" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="FIRST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="UN_LIST_TYPE" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="REFERENCE_NUMBER" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="LISTED_ON" type="xs:date" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="NAME_ORIGINAL_SCRIPT" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="COMMENTS1" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="LIST_TYPE">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element name="VALUE" type="xs:string" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element minOccurs="0" name="LAST_DAY_UPDATED">
+                    <xs:element minOccurs="0" maxOccurs="1" name="LAST_DAY_UPDATED">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element maxOccurs="unbounded" name="VALUE" type="xs:date" />
+                          <xs:element minOccurs="0" maxOccurs="unbounded" name="VALUE" type="xs:string" nillable="true"/>
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="ENTITY_ALIAS">
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ENTITY_ALIAS">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="QUALITY" type="xs:string" />
-                          <xs:element name="ALIAS_NAME" type="xs:string" />
-                          <xs:element minOccurs="0" name="NOTE" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="QUALITY" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="ALIAS_NAME" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" nillable="true"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element maxOccurs="unbounded" name="ENTITY_ADDRESS">
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ENTITY_ADDRESS">
                       <xs:complexType>
-                        <xs:sequence>
-                          <xs:element minOccurs="0" name="STREET" type="xs:string" />
-                          <xs:element minOccurs="0" name="CITY" type="xs:string" />
-                          <xs:element minOccurs="0" name="STATE_PROVINCE" type="xs:string" />
-                          <xs:element minOccurs="0" name="ZIP_CODE" type="xs:string" />
-                          <xs:element minOccurs="0" name="COUNTRY" type="xs:string" />
-                          <xs:element minOccurs="0" name="NOTE" type="xs:string" />
-                        </xs:sequence>
+                        <xs:all>
+                          <xs:element minOccurs="0" maxOccurs="1" name="STREET" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="STATE_PROVINCE" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="CITY" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="COUNTRY" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="ZIP_CODE" type="xs:string" nillable="true"/>
+                          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" nillable="true"/>
+                        </xs:all>
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="SORT_KEY" />
-                    <xs:element name="SORT_KEY_LAST_MOD" />
+                    <xs:element minOccurs="0" maxOccurs="1" name="SORT_KEY" type="xs:string" nillable="true"/>
+                    <xs:element minOccurs="0" maxOccurs="1" name="SORT_KEY_LAST_MOD" type="xs:string" nillable="true"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

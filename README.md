@@ -4,7 +4,13 @@ inoutlists is a python package to parse and normalize different sources of lists
 
 Once the lists are parsed and normalized, the user can dump the information to other formats such as JSON, CSV or a Pandas data frame for further research or transfer to other systems. 
 
-Moreover, the package can be extended to parse any kind of source creating specific Loaders classes or to dump the information to any kind of formats creating specific Dumpers classes. 
+Moreover, the package can be extended to parse any kind of source creating specific Loaders classes or to dump the information to any kind of formats creating specific Dumpers classes.
+
+## Installing inoutlists
+
+```console
+$ python -m pip install inoutlists
+```
 
 ## Basic Usage
 
@@ -92,12 +98,6 @@ Name: 32, dtype: object
 ('{"meta": {"description": "OFAC SDN list", "source": '
  '"https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML", '
  '"list_date": "2024-05-24"}, "list_entries": [{"id": "36", "typ')
-```
-
-## Installing inoutlists
-
-```console
-$ python -m pip install inoutlists
 ```
 
 ## Common dictionary interface
