@@ -186,7 +186,7 @@ class LoaderOFACXML(LoaderXML):
         ):
         super().__init__(description=description, schema=schema)
         self.allowedIdTypes = []
-        with open(Path(_modulePath, "./OFAC_id_Types.csv"), 
+        with open(Path(_modulePath, "./OFAC_Id_Types.csv"), 
                   mode="r", 
                   encoding="utf-8") as f:
             reader = csv.DictReader(f)
